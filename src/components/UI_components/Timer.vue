@@ -55,7 +55,7 @@
                 this.newDate = {
                     days: (31 - allDate.getDate()),
                     hours: (24 - allDate.getHours()),
-                    minutes: 60 - minute,
+                    minutes: 60 - minute - 1,
                     seconds: (60 - allDate.getSeconds())
                 }
                 if (this.date !== this.newDate) {
