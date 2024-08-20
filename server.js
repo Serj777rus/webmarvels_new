@@ -2,7 +2,7 @@ require('dotenv').config();
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs')
+// const fs = require('fs')
 // const axios = require('axios');
 // const nodeMailer = require('nodemailer')
 
@@ -16,12 +16,6 @@ app.use(cors({
     credentials: true,
     origin: '*'
 }));
-
-function getData() {
-    const fileData = fs.readFileSync('src/assets/rows.json', 'utf-8');
-    console.log(fileData)
-}
-getData()
 
 server.listen(PORT, () => {
     console.log(`Сервер зпущен на порту ${PORT}`)
