@@ -2,7 +2,7 @@
 <template>
         <div class="header_div">
             <img src="@/assets/full_logo_dark.svg">
-            <button class="button">
+            <button class="button" @click="this.$emit('openPop')">
                 <span class="button-content">Связаться</span>
             </button>
         </div>

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="main">
-        <Header></Header>
+        <Header @openPop="openFunc"></Header>
         <div class="general_block">
             <div class="left_side_geberal_div">
                 <h2>Студия WEB разработки<br>"WEB Marvels"</h2>
@@ -111,7 +111,9 @@
             </div>
             <video autoplay loop muted src="../assets/Strapi_v4_teaser.mp4"></video>
         </div>
-        <Timer></Timer>
+        <div class="gift_block">
+            <Timer></Timer>
+        </div>
         <div class="posts_div">
             <h3>Полезные статьи</h3>
             <Posts :posts="posts"></Posts>
@@ -129,6 +131,7 @@
         <div class="footer_main">
             <Footer></Footer>
         </div>
+        <PopUp :isOpen="isOpenPopUp" @closePop="closePopUp"></PopUp>
     </div>
 </template>
 
@@ -136,6 +139,7 @@
     import Footer from './UI_components/Footer.vue';
     import Header from './UI_components/Header.vue';
     import Input from './UI_components/Input.vue';
+    import PopUp from './UI_components/PopUp.vue';
     import Posts from './UI_components/Posts.vue';
     import Price from './UI_components/Price.vue';
     import Projects from './UI_components/Projects.vue';
@@ -150,7 +154,8 @@
             Price,
             Projects,
             Footer,
-            Timer
+            Timer,
+            PopUp
         },
         data() {
             return {
@@ -369,7 +374,8 @@
                         description: 'Классический лендинг для мастера по массажу лица. Нами был разработан дизайн, сверстан сайт и подключена онлайн запись',
                         link: 'https://glfacemassage.ru'
                     }
-                ]
+                ],
+                isOpenPopUp: false
             }
         },
         methods: {
@@ -379,6 +385,12 @@
                 } else {
                     this.opencard = id
                 }
+            },
+            openFunc() {
+                this.isOpenPopUp = true;
+            },
+            closePopUp() {
+                this.isOpenPopUp = false
             }
         }
     }
@@ -817,6 +829,15 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+    }
+    .gift_block {
+        margin-top: 120px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(56, 56, 56, 1);
+        padding: 32px 0px;
     }
     .posts_div {
         width: 1200px;
