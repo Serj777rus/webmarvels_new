@@ -66,7 +66,6 @@ export default {
   color: beige;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  padding: 0;
   /* background: linear-gradient(#042454, #1f3577, #3d459c, #5f55c0, #8663e3); */
 }
 html,

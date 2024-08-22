@@ -14,7 +14,7 @@
                     <input v-model="popform.phone" type="text" required name="phone">
                 </div>
                 <button class="pop_btn" :disabled="!popform.name || !popform.phone">Отправить</button>
-                <div class="closepop" @click="this.$emit('closePop')">закрыть</div>
+                <div class="closepop" @click="this.$emit('closePop')">&#10060;</div>
             </form>
         </div>
     </div>
@@ -66,7 +66,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: rgba(255, 255, 255, 1);
+        background: beige;
         border-radius: 28px;
         padding: 48px 24px;
         box-sizing: border-box;
@@ -99,6 +99,7 @@
         border: 2px solid rgba(56, 56, 56, 1);
         border-radius: 4px;
         box-sizing: border-box;
+        background: transparent;
     }
     .inputs_pop label {
         font-size: 16px;
@@ -108,16 +109,23 @@
         top: -12px;
         left: 12px;
         padding: 2px 4px;
-        background: #fff;
+        background: beige;
     }
     .pop_btn {
         margin-top: 32px;
+        box-sizing: border-box;
+        padding: 12px 48px;
+        border: none;
+        border-radius: 32px;
+        color: beige;
+        background: rgba(56, 56, 56, 1);
+        cursor: pointer;
     }
     .closepop {
         cursor: pointer;
         position: absolute;
         top: 12px;
-        left: 64px;
+        right: 24px;
         color: rgba(56, 56, 56, 1);
     }
 </style>

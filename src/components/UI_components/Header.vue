@@ -64,5 +64,15 @@
   );
   transition: all 0.475s;
 }
-
+@media all and (max-width: 440px) {
+  .header_div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+}
 </style>

@@ -108,4 +108,91 @@
 .project:hover img {
     filter: brightness(100%);
 }
+@media all and (max-width:440px) {
+    .portfolio {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.portfolio h3 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: rgba(56, 56, 56, 1);
+    text-align: center;
+}
+.projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
+}
+.project {
+    display: flex;
+    width: 100%;
+    position: relative;
+    border-radius: 24px;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.project img {
+    width: 100%;
+    object-fit: cover !important;
+    box-sizing: border-box !important;
+    filter: brightness(20%);
+    transition: all 300ms ease-in-out;
+}
+.project p {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-10%, -10%);
+    color: beige;
+    font-size: 24px;
+    text-align: start;
+    font-weight: 700;
+    transition: all 300ms ease-in-out;
+}
+.project span {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    transform: translate(-10%, -120%);
+    color: beige;
+    transition: all 300ms ease-in-out;
+    font-size: 12px;
+}
+.project a {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+.project button {
+    width: auto;
+    padding: 8px 24px;
+    background: rgba(134, 126, 157, 1);
+    border: none;
+    border-radius: 32px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    font-size: 12px;
+}
+.project:hover button {
+    background: rgba(186, 106, 216, 1);
+}
+.project:hover p {
+    transform: translateY(-300%);
+}
+.project:hover span {
+    transform: translateY(300%);
+}
+.project:hover img {
+    filter: brightness(100%);
+}
+}
 </style>

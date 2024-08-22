@@ -268,4 +268,18 @@
     .button-3d:active .button-base {
     border-radius: 10px 10px 8px 8px / 8px;
     }
+    @media all and (max-width: 440px) {
+        .posts {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 0px 10px;
+    }
+    }
 </style>

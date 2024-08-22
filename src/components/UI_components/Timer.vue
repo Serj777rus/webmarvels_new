@@ -346,4 +346,229 @@ span {
 .couter_right button:hover {
     background: rgba(186, 106, 216, 1);
 }
+@media all and (max-width: 440px) {
+    .counter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+.left_text_count_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 32px; */
+    /* background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(6px); */
+    position: relative;
+    /* padding: 48px 12px; */
+}
+.counter_left_cifr_text {
+    width: 100%;
+    background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(2px);
+    padding: 48px 12px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 32px;
+    z-index: 3;
+}
+.count_cifr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    z-index: 3;
+}
+.counter_text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+}
+.counter_text p {
+    text-align: center;
+    font-size: 32px;
+    line-height: 100%;
+    color: rgba(56, 56, 56, 1);
+    font-weight: 700;
+    z-index: 3;
+}
+.left_text_count_img img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-20%, -50%) rotate(12deg);
+    z-index: 1;
+}
+.count_with_span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+.seconds {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 48px;
+    overflow-y: hidden;
+    position: relative;
+}
+.minutes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 48px;
+    overflow-y: hidden;
+    position: relative;
+}
+.hours {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 48px;
+    overflow-y: hidden;
+    position: relative;
+}
+.days {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 48px;
+    overflow-y: hidden;
+    position: relative;
+}
+span {
+    font-size: 24px;
+    font-weight: 500;
+    color: red;
+}
+.pseconds {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(0);
+}
+.pseconds2 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(34px);
+}
+.pminutes {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(0);
+}
+.pminutes2 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(34px);
+}
+.phours {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(0);
+}
+.phours2 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(34px);
+}
+.pdays {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(0);
+}
+.pdays2 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+    color: red;
+    transform: translateY(34px);
+}
+.active {
+    animation: fadeout 1000ms ease;
+}
+@keyframes fadeout {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-32px);
+    }
+}
+@keyframes fadeoin {
+    0% {
+        transform: translateY(32px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.active2 {
+    animation: fadein 1000ms ease;
+}
+.couter_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+.couter_right img {
+    width: 70%;
+    object-fit: cover;
+}
+.couter_right p {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    text-align: center;
+    color: beige;
+}
+.couter_right p span {
+    font-size: 48px;
+    line-height: 100%;
+    font-weight: 900;
+    color: red;
+}
+.couter_right button {
+    padding: 12px 64px;
+    background: rgba(134, 126, 157, 1);
+    border: none;
+    border-radius: 32px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+.couter_right button:hover {
+    background: rgba(186, 106, 216, 1);
+}
+}
 </style>
