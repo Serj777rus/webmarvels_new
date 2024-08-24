@@ -8,10 +8,10 @@
             <p>Начнем работу над вашим сайтом уже<br><span>СЕГОДНЯ!</span></p>
             <h4>Оставьте заявку или свяжитесь в соц сетях</h4>
             <div class="socials">
-                <img src="@/assets/insta.png">
-                <img src="@/assets/vkfooter.png">
-                <img src="@/assets/telegramm.png">
-                <img src="@/assets/whatsappfooter.png">
+                <a href="https://www.instagram.com/sergey_webdevelope?igsh=MTV3ZGt4enhkMGh5aw%3D%3D&utm_source=qr"><img src="@/assets/insta.png"></a>
+                <a href="https:/t.me/Gorbachev_S_V"><img src="@/assets/vkfooter.png"></a>
+                <a href="/t.me/Gorbachev_S_V"><img src="@/assets/telegramm.png"></a>
+                <a href="https://wa.me/79114682801"><img src="@/assets/whatsappfooter.png"></a>
             </div>
         </div>
         <div class="right_side_footer">
