@@ -1,7 +1,7 @@
 <template>
     <div class="popup_main" v-if="isOpen">
         <div class="popup_div">
-            <form @submit.prevent="sendPopForm">
+            <form @submit.prevent="sendForm">
                 <div class="form_text">
                     <p>Оставьте заявку<br>и мы свяжемся с Вами для консультации</p>
                 </div>
@@ -15,12 +15,14 @@
                 </div>
                 <button class="pop_btn" :disabled="!popform.name || !popform.phone">Отправить</button>
                 <div class="closepop" @click="this.$emit('closePop')">&#10060;</div>
+                <div style="color: green;">{{ formMessage }}</div>
             </form>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
     export default {
         props: {
             isOpen: {
@@ -34,6 +36,25 @@
                     name: '',
                     phone: ''
                 },
+                formMessage: ''
+            }
+        },
+        methods: {
+            async sendForm() {
+                try {
+                    const response = await axios.post('https://localhost:3000/sendform', this.popform);
+                    if (response.status == 200) {
+                        this.formMessage = response.data.message;
+                        setTimeout(() => {
+                            this.formMessage = '',
+                            this.popform.name = '',
+                            this.popform.phone = '',
+                            this.$emit('closePop')
+                        }, 1500)
+                    }
+                } catch(error) {
+                    console.log(error)
+                }
             }
         }
     }
@@ -50,6 +71,7 @@
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, .9);
+        z-index: 999;
     }
     .popup_div {
         width: 400px;

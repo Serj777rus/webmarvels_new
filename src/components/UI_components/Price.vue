@@ -2,11 +2,11 @@
 <template>
     <div class="price_block">
         <div class="price_card" v-for="price in price" :key="price.id">
-            <p>{{ price.cena }}<span>₽</span></p>
-            <h3>{{ price.category }}</h3>
-            <h4>{{ price.description }}</h4>
+            <p>{{ price.attributes.cena }}<span>₽</span></p>
+            <h3>{{ price.attributes.category }}</h3>
+            <h4>{{ price.attributes.description }}</h4>
             <ul>
-                <li v-for="list in price.list" :key="list.id">
+                <li v-for="list in price.attributes.pricelist" :key="list.id">
                         <label class="container">
                             <input checked="checked" type="checkbox">
                             <div class="checkmark"></div>
@@ -14,7 +14,7 @@
                         <span>{{ list.article }}</span>
                 </li>
             </ul>
-            <button>Заказать</button>
+            <button @click="this.$emit('openPop')">Заказать</button>
         </div>
     </div>
 </template>

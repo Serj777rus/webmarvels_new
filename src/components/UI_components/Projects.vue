@@ -4,10 +4,10 @@
         <h3>Наши проекты</h3>
         <div class="projects">
             <div class="project" v-for="project in projects" :key="project.id">
-                <img :src="project.photo">
-                <p>{{ project.name }}</p>
-                <span>{{ project.description }}</span>
-                <a :href="project.link" target="_blank"><button>Перейти на сайт</button></a>
+                <img :src="`${imageUrl}${project.attributes.photo.data.attributes.url}`">
+                <p>{{ project.attributes.name }}</p>
+                <span>{{ project.attributes.description }}</span>
+                <a :href="project.attributes.link" target="_blank"><button>Перейти на сайт</button></a>
             </div>
         </div>
     </div>
@@ -19,6 +19,11 @@
             projects: {
                 type: Array,
                 required: true
+            }
+        },
+        data() {
+            return {
+                imageUrl: 'https://strapi.webmarvels.ru'
             }
         }
     }

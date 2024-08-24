@@ -28,6 +28,7 @@
 
 <style scoped>
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -47,7 +48,7 @@
 
 .input {
   width: 100%;
-  height: 45px;
+  height: 46px;
   border: none;
   outline: none;
   padding: 0px 7px;

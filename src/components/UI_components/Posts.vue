@@ -3,11 +3,11 @@
     <div class="posts" ref="postsContainer">
         <div class="post_card" v-for="post in posts" :key="post.id" ref="postCard">
             <div class="image">
-                <img :src="post.image">
+                <img :src='`${imageUrl}${post.attributes.image.data.attributes.url}`'>
             </div>
             <div class="text">
-                <h3>{{ post.title }}</h3>
-                <h4 :class="{ activeh: openpost == post.id }">{{ post.description }}</h4>
+                <h3>{{ post.attributes.title }}</h3>
+                <h4 :class="{ activeh: openpost == post.id }">{{ post.attributes.description }}</h4>
             </div>
             <button class="signupBtn" @click="openPost(post.id)">
                 Прочитать
@@ -46,7 +46,8 @@
         data() {
             return {
                 openpost: '',
-                currentIndex: 0
+                currentIndex: 0,
+                imageUrl: 'https://strapi.webmarvels.ru'
             }
         },
         methods: {

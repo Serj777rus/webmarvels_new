@@ -42,7 +42,7 @@
         <div class="couter_right">
             <img src="@/assets/giftbox.png">
             <p>Закажите разработку сайта до 31 августа и получите скидку<br><span>20%</span></p>
-            <button>Заказать</button>
+            <button @click="this.$emit('openPop')">Заказать</button>
         </div>
     </div>
 </template>

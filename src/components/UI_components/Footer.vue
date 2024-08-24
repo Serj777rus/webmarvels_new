@@ -19,7 +19,8 @@
             <form @submit.prevent="sendForm">
                 <Input v-model="form.name" label="Имя"></Input>
                 <Input v-model="form.phone" label="Телефон"></Input>
-                <SendButton type="submit">Отправить</SendButton>
+                <SendButton :disabled="!form.name || !form.phone" type="submit">Отправить</SendButton>
+                <div>{{ formMessage }}</div>
             </form>
         </div>
     </div>
@@ -28,7 +29,7 @@
 <script>
 import Input from './Input.vue';
 import SendButton from './SendButton.vue';
-
+import axios from 'axios';
     export default {
         components: {
             Input,
@@ -39,6 +40,24 @@ import SendButton from './SendButton.vue';
                 form: {
                     name: '',
                     phone: ''
+                },
+                formMessage: ''
+            }
+        },
+        methods: {
+            async sendForm() {
+                try {
+                    const response = await axios.post('https://localhost:3000/sendform', this.form);
+                    if (response.status == 200) {
+                        this.formMessage = response.data.message;
+                        setTimeout(() => {
+                            this.formMessage = '',
+                            this.form.name = '',
+                            this.form.phone = ''
+                        }, 1500)
+                    }
+                } catch(error) {
+                    console.log(error)
                 }
             }
         }
@@ -107,6 +126,7 @@ import SendButton from './SendButton.vue';
     justify-content: center;
     align-items: end;
     position: relative;
+    box-sizing: border-box;
 }
 .right_side_footer img {
     width: 100%;
@@ -117,6 +137,7 @@ import SendButton from './SendButton.vue';
     z-index: 1;
 }
 .right_side_footer form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -126,6 +147,7 @@ import SendButton from './SendButton.vue';
     border-radius: 24px;
     background: rgba(255,255,255, .5);
     backdrop-filter: blur(4px);
+    box-sizing: border-box;
 }
 @media all and (max-width: 440px) {
     .footer {
