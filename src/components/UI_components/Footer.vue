@@ -10,7 +10,7 @@
             <div class="socials">
                 <a href="https://www.instagram.com/sergey_webdevelope?igsh=MTV3ZGt4enhkMGh5aw%3D%3D&utm_source=qr"><img src="@/assets/insta.png"></a>
                 <a href="https:/t.me/Gorbachev_S_V"><img src="@/assets/vkfooter.png"></a>
-                <a href="/t.me/Gorbachev_S_V"><img src="@/assets/telegramm.png"></a>
+                <a href="https://t.me/Gorbachev_S_V"><img src="@/assets/telegramm.png"></a>
                 <a href="https://wa.me/79114682801"><img src="@/assets/whatsappfooter.png"></a>
             </div>
         </div>
