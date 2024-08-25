@@ -190,7 +190,7 @@ import Footer from './UI_components/Footer.vue';
             },
             async getContent() {
                 try {
-                    const response = await axios.get('http://192.168.0.106:3000/getcontent');
+                    const response = await axios.get('api/getcontent');
                     if (response.status == 200) {
                         this.categorySites = response.data.categorySites.data;
                         this.posts = response.data.posts.data;
@@ -204,7 +204,7 @@ import Footer from './UI_components/Footer.vue';
             },
             async sendForm() {
                 try {
-                    const response = await axios.post('https://localhost:3000/sendform', this.form);
+                    const response = await axios.post('api/sendform', this.form);
                     if (response.status == 200) {
                         this.formMessage = response.data.message;
                         setTimeout(() => {

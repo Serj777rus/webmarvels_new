@@ -42,7 +42,7 @@ import axios from 'axios';
         methods: {
             async sendForm() {
                 try {
-                    const response = await axios.post('https://localhost:3000/sendform', this.popform);
+                    const response = await axios.post('api/sendform', this.popform);
                     if (response.status == 200) {
                         this.formMessage = response.data.message;
                         setTimeout(() => {
