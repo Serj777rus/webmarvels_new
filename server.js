@@ -9,8 +9,8 @@ const nodeMailer = require('nodemailer')
 const PORT = 5001;
 const app = express();
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru-0001/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru-0001/fullchain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru/fullchain.pem')
 }
 const server = https.createServer(options, app);
 
