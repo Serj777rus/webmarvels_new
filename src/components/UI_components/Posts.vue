@@ -18,21 +18,21 @@
         </div>
     </div>
     <div class="button-container">
-            <button class="button-3d" @click="prevPost">
-                <div class="button-top">
-                <span class="material-icons">❮</span>
-                </div>
-                <div class="button-bottom"></div>
-                <div class="button-base"></div>
-            </button>
-            <button class="button-3d" @click="nextPost">
-                <div class="button-top">
-                <span class="material-icons">❯</span>
-                </div>
-                <div class="button-bottom"></div>
-                <div class="button-base"></div>
-            </button>
-        </div>
+        <button class="button-3d" @click="prevPost">
+            <div class="button-top">
+            <span class="material-icons">❮</span>
+            </div>
+            <div class="button-bottom"></div>
+            <div class="button-base"></div>
+        </button>
+        <button class="button-3d" @click="nextPost">
+            <div class="button-top">
+            <span class="material-icons">❯</span>
+            </div>
+            <div class="button-bottom"></div>
+            <div class="button-base"></div>
+        </button>
+    </div>
 </template>
 
 <script>

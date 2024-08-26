@@ -112,6 +112,9 @@
             </div>
             <video autoplay loop muted src="../assets/Strapi_v4_teaser.mp4"></video>
         </div>
+        <div class="articles_main">
+            <ArticlesBlock :articles="articles"></ArticlesBlock>
+        </div>
         <div class="gift_block">
             <Timer @openPop="openFunc"></Timer>
         </div>
@@ -147,6 +150,7 @@ import Footer from './UI_components/Footer.vue';
     import Projects from './UI_components/Projects.vue';
     import SendButton from './UI_components/SendButton.vue';
     import Timer from './UI_components/Timer.vue';
+    import ArticlesBlock from './UI_components/ArticlesBlock.vue';
     export default {
         components: {
             Header,
@@ -157,7 +161,8 @@ import Footer from './UI_components/Footer.vue';
             Projects,
             Footer,
             Timer,
-            PopUp
+            PopUp,
+            ArticlesBlock
         },
         data() {
             return {
@@ -171,7 +176,15 @@ import Footer from './UI_components/Footer.vue';
                 price: [],
                 projects: [],
                 isOpenPopUp: false,
-                formMessage: ''
+                formMessage: '',
+                articles: [
+                    {
+                        id: 1,
+                        title: 'Как сайт может повысить возвращемость?',
+                        description: 'Большое заблуждение, что сайт это только статическая страница в интернете. Все намного интереснее, сейчас сайт - это уже целая экосистема для вашего бизнеса.',
+                        miniphoto: require('@/assets/articlesminiphoto.png')
+                    }
+                ]
             }
         },
         methods: {
@@ -657,6 +670,13 @@ import Footer from './UI_components/Footer.vue';
         display: flex;
         flex-direction: column;
         gap: 12px;
+    }
+    .articles_main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
     }
     .gift_block {
         margin-top: 120px;
