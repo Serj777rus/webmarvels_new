@@ -112,9 +112,9 @@
             </div>
             <video autoplay loop muted src="../assets/Strapi_v4_teaser.mp4"></video>
         </div>
-        <div class="articles_main">
+        <!-- <div class="articles_main">
             <ArticlesBlock :articles="articles"></ArticlesBlock>
-        </div>
+        </div> -->
         <div class="gift_block">
             <Timer @openPop="openFunc"></Timer>
         </div>
