@@ -150,7 +150,7 @@ import Footer from './UI_components/Footer.vue';
     import Projects from './UI_components/Projects.vue';
     import SendButton from './UI_components/SendButton.vue';
     import Timer from './UI_components/Timer.vue';
-    import ArticlesBlock from './UI_components/ArticlesBlock.vue';
+    // import ArticlesBlock from './UI_components/ArticlesBlock.vue';
     export default {
         components: {
             Header,
@@ -162,7 +162,7 @@ import Footer from './UI_components/Footer.vue';
             Footer,
             Timer,
             PopUp,
-            ArticlesBlock
+            // ArticlesBlock
         },
         data() {
             return {
