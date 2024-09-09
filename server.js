@@ -1,20 +1,20 @@
 require('dotenv').config();
-// const https = require('https');
-const http = require('http');
+const https = require('https');
+// const http = require('http');
 const express = require('express');
 const cors = require('cors');
-// const fs = require('fs')
+const fs = require('fs')
 const axios = require('axios');
 const nodeMailer = require('nodemailer')
 
 const PORT = 5001;
 const app = express();
-// const options = {
-//     key: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru/privkey.pem'),
-//     cert: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru/fullchain.pem')
-// }
-// const server = https.createServer(options, app);
-const server = http.createServer(app);
+const options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/webmarvels.ru/fullchain.pem')
+}
+const server = https.createServer(options, app);
+// const server = http.createServer(app);
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
