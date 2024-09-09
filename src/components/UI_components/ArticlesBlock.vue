@@ -3,12 +3,11 @@
         <div v-for="article in articles" :key="article.id" class="article">
             <div class="leftside_card">
                 <img :src="article.miniphoto">
-                <p>{{ article.title }}</p>
+                <h3>{{ article.title }}</h3>
             </div>
             <div class="rightside_card">
-                <h3>{{ article.title }}</h3>
-                <p>{{ article.description }}</p>
-                <button class="signupBtn" @click="this.$router.push('blog')">Подробнее</button>
+                <p>{{ article.article }}</p>
+                <button class="signupBtn" @click="navigateToBlog(article)">Подробнее</button>
             </div>
         </div>
     </div>
@@ -20,6 +19,13 @@
             articles: {
                 type: Array,
                 requiered: true
+            }
+        },
+        methods: {
+            navigateToBlog(article) {
+                localStorage.setItem('article', JSON.stringify(article));
+                console.log(localStorage.getItem('article'))
+                this.$router.push({name: 'blog'});
             }
         }
         
@@ -44,9 +50,6 @@
     position: relative;
     cursor: pointer;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
-    transform: translate(-300px);
-    opacity: 0;
-    transition: all 1s ease;
     }
 
     .arrow {
@@ -80,109 +83,70 @@
         width: 1200px;
         display: flex;
         flex-direction: row;
-        gap: 32px;
-        row-gap: 32px;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     .article {
-        min-width: 300px;
-        max-width: 600px;
+        max-width: 360px;
+        max-height: 200px;
         display: flex;
-        flex-direction: row;
-        height: 400px;
-        flex: 1;
-        /* border-radius: 32px; */
-        box-sizing: border-box;
-        /* overflow: hidden; */
-        overflow-y: visible;
+        flex-direction: column;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        border-radius: 12px;
+        transition: all 1s ease;
     }
     .leftside_card {
-        width: 300px;
-        height: 400px;
-        background: yellowgreen;
         position: relative;
-        padding: 32px;
-        box-sizing: border-box;
+        display: flex;
+        width: 360px;
+        height: 200px;
         z-index: 2;
     }
     .leftside_card img {
-        height: 360px;
+        width: 100%;
         object-fit: cover;
-        position: absolute;
-        bottom: 50%;
-        left: 50%;
-        transform: translate(-50%, 50%);
+        filter: brightness(60%);
+        border-radius: 12px;
         transition: all 1s ease;
-        z-index: 0;
     }
-    .leftside_card p {
-        text-align: center;
-        font-size: 24px;
-        line-height: 100%;
-        font-weight: 900;
-        color: beige;
-        text-shadow: 4px 4px rgb(59, 59, 59);
+    .leftside_card h3 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 1;
-        transition: opacity 300ms ease;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 900;
     }
     .rightside_card {
-        width: 300px;
-        height: 400px;
-        transform: translateX(-300px);
-        z-index: 1;
-        background: yellow;
-        padding: 32px;
-        box-sizing: border-box;
-        transition: all 1s ease;
         display: flex;
-        flex-direction: column;
-        gap: 16px;
-        align-items: start;
-        justify-content: center;
-    }
-    .rightside_card h3 {
-        font-size: 20px;
-        color: darkslategray;
-        font-weight: 900;
-        transform: translateX(-300px);
-        opacity: 0;
+        width: 360px;
+        max-height: 0px;
+        transform: translateY(-200px);
+        /* background: beige; */
         transition: all 1s ease;
+        z-index: 1;
+        flex-direction: column;
+        gap: 12px;
+        box-sizing: border-box;
     }
     .rightside_card p {
-        font-size: 12px;
-        font-weight: 300;
-        color: black;
-        transform: translateX(-300px);
-        opacity: 0;
-        transition: all 1s ease;
+        padding-left: 16px;
+        border-left: 4px solid red;
     }
     .article:hover .rightside_card {
-        /* width: 300px;
-        padding: 32px; */
-        transform: translateX(0px);
-    }
-    .article:hover .rightside_card h3 {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    .article:hover .rightside_card p {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    .article:hover .signupBtn {
-        transform: translateX(0px);
-        opacity: 1;
+        transform: translateY(0);
+        max-height: 200px;
+        padding: 12px;
     }
     .article:hover .leftside_card img {
-        height: 420px;
-        bottom: 0;
-        transform: translate(-50%, 0);
-        z-index: 999;
+        border-radius: 12px 12px 0px 0px;
     }
-    .article:hover .leftside_card p {
-        opacity: 0;
+    .rightside_card p {
+        color: rgb(59, 59, 59);
+    }
+    .article:hover {
+        max-height: 400px;
     }
 </style>

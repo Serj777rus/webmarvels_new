@@ -14,7 +14,6 @@ const router = createRouter({
         path: '/blog',
         component: Blog,
         name: 'blog',
-        props: { article: true }
     }],
     history: createWebHistory()
 })
